@@ -187,6 +187,8 @@ class DB:
             module = "mysql.connector"
         elif self._db == "mariadb":  # pragma: no cover
             import mariadb as db  # type: ignore
+        elif self._db == "asyncpg":
+            import asyncpg as db  # type: ignore
         else:  # pragma: no cover
             raise Exception(f"unexpected db {self._db}")
         # get version if needed
